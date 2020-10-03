@@ -1,0 +1,26 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand"  >ADPCare</a>
+    <ul *ngIf="loggedIn()" class="navbar-nav mr-auto">
+      <li class="nav-item " routerLinkActive="active">
+        <a class="nav-link" [routerLink]="['/expense-submission']"  ></a>
+      </li>
+     
+     
+     
+    </ul>
+    <div *ngIf="loggedIn()" class="dropdown" dropdown>
+      <a class="dropdown-toggle text-light" dropdownToggle>
+        Welcome {{ authService.decodedToken?.unique_name | titlecase }}
+      </a>
+      <div class="dropdown-menu mt-3" *dropdownMenu>
+       
+        <div class="dropdown-item"></div>
+        <a class="dropdown-item" (click)="logout()"
+          ><i class="fa fa-sign-out"></i> Logout</a
+        >
+      </div>
+    </div>
+  
+  </div>
+</nav> 
