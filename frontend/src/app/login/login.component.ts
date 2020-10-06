@@ -38,7 +38,8 @@ ngOnInit() {
       },
       error => {
         this.alertify.error('Failed to login');
-      }
+      },()=>{
+        this.router.navigate(['/HealthUpdate']);}
     );
   }
 
