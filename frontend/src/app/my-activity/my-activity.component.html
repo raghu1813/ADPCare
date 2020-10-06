@@ -1,0 +1,11 @@
+<div class="card mt-5">
+  <div class="body" *ngIf="res"> 
+    You can Work at home 
+  </div>
+  <div class="container" *ngIf="!res">
+    
+      <label for="CC" class="mr-2"> Are you at cafetaria </label>
+      <button class="btn btn-primary mr-2" (click)="yes()"  >YES</button>
+      <button class="btn btn-primary" (click)="no()">No</button>
+  </div>
+</div>

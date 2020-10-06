@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { HealthInfo } from '../models/HealthInfo';
+import { AdminService } from '../_services/admin.service';
 import { AlertifyService } from '../_services/alertify.service';
 import {HealthUpdationService} from '../_services/health-updation.service';
 @Component({
@@ -10,11 +11,16 @@ import {HealthUpdationService} from '../_services/health-updation.service';
 })
 export class HealthUpdateComponent implements OnInit {
 myForm: FormGroup;
-
-  constructor(private fb: FormBuilder, private healthS: HealthUpdationService, private alertify: AlertifyService) { }
+res: boolean;
+  constructor(private fb: FormBuilder, 
+              private healthS: HealthUpdationService,
+              private alertify: AlertifyService,
+              public admin: AdminService) { }
 
   ngOnInit() {
     this.createSubmissionForm();
+    this.send();
+   
   }
   createSubmissionForm() {
     this.myForm = this.fb.group({
@@ -45,6 +51,14 @@ myForm: FormGroup;
    }
    );
   }
+  delay(ms: number) {
+    return new Promise( resolve => setTimeout(resolve, ms) );
+  }
+  async send(){
+     alert('Go Wash your hands at the nearest sanitation Station');
+     await this.delay(100000);
+     this.send();
+   }
 
 
 }
