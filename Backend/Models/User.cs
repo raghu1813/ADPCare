@@ -9,6 +9,7 @@ namespace Backend.Models
     public class User : IdentityUser<int>
     {
         public HealthInfo HealthInfo { get; set; }
+        public float RiskScore { get; set; }
         public ICollection<UserRole> UserRoles { get; set; }
     }
 }

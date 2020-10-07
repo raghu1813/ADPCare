@@ -4,7 +4,17 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://localhost:5000/api/'
+  apiUrl: 'http://localhost:5000/api/',
+  firebase: {
+    apiKey: 'AIzaSyBjh8VDTYTuSIcKL-ge8gXwPcQ1fP2d8dg',
+    authDomain: 'adpcare-c281a.firebaseapp.com',
+    databaseURL: 'https://adpcare-c281a.firebaseio.com',
+    projectId: 'adpcare-c281a',
+    storageBucket: 'adpcare-c281a.appspot.com',
+    messagingSenderId: '741187255963',
+    appId: '1:741187255963:web:3756bb82177496bfea503e',
+    measurementId: 'G-JHZ9SY5TR3'
+ }
 };
 
 /*

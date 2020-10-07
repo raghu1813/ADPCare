@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using Backend.Data;
 using Backend.Models;
+using Backend.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
@@ -63,6 +64,7 @@ namespace Backend
 
                }
            );
+            services.Configure<MailSettings>(Configuration.GetSection("MailSettings"));
             services.AddAuthorization(options =>
             {
                 options.AddPolicy("RequireManagerRole", policy => policy.RequireRole("Admin"));
@@ -82,6 +84,7 @@ namespace Backend
 
             });
 
+            services.AddTransient<IMailService, Services.MailService>();
 
             services.AddCors();
             services.AddAutoMapper(typeof(DataContext).Assembly);
@@ -96,7 +99,6 @@ namespace Backend
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseHttpsRedirection();
 
             app.UseRouting();
             app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());

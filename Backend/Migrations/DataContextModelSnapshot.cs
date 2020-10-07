@@ -26,6 +26,15 @@ namespace Backend.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<bool>("FamilyStatus")
+                        .HasColumnType("bit");
+
+                    b.Property<float>("OxygenLevel")
+                        .HasColumnType("real");
+
+                    b.Property<float>("Temperature")
+                        .HasColumnType("real");
+
                     b.HasKey("Id");
 
                     b.ToTable("HealthInfos");
@@ -106,6 +115,9 @@ namespace Backend.Migrations
 
                     b.Property<bool>("PhoneNumberConfirmed")
                         .HasColumnType("bit");
+
+                    b.Property<float>("RiskScore")
+                        .HasColumnType("real");
 
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("nvarchar(max)");

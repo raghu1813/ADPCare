@@ -3,10 +3,14 @@
     <a class="navbar-brand"  >ADPCare</a>
     <ul *ngIf="loggedIn()" class="navbar-nav mr-auto">
       <li class="nav-item " routerLinkActive="active">
-        <a class="nav-link" [routerLink]="['/expense-submission']"  ></a>
+        <a class="nav-link" [routerLink]="['/HealthUpdate']"  > HealthStatus </a>
       </li>
-     
-     
+      <li *ngIf="!admin.wfh" class="nav-item " routerLinkActive="active">
+        <a class="nav-link" [routerLink]="['/workplaceinfo']"  > WorkPlace Status </a>
+      </li>
+      <li  class="nav-item " routerLinkActive="active">
+        <a class="nav-link" [routerLink]="['/myactivity']"  > My Status </a>
+      </li>
      
     </ul>
     <div *ngIf="loggedIn()" class="dropdown" dropdown>

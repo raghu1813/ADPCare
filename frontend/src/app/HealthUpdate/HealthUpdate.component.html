@@ -1,0 +1,56 @@
+<div class="card mt-5">
+  <div class="body ">
+
+    <form [formGroup]="myForm" (ngSubmit)="submit()">
+      <h2 class="text-center text-primary" >Update Your HealthStatus</h2>
+      <hr/>
+      
+      
+        <div class="form-group form-row  ">
+          
+            <label class="col-md-5" for="temperature" >Body Temperature</label>
+            <input 
+  
+                formControlName="temperature"
+                id="temperature" 
+                type="number" 
+                class="form-control col-md-7">
+        </div>
+        <div class="form-group form-row">
+          <label class="col-md-5" for="oxygenLevel">Oxygen Level</label>
+          <input 
+              formControlName="oxygenLevel"
+              id="oxygenLevel" 
+              type="number"
+              class="form-control col-md-7">
+         
+      </div>
+      <div class="form-group">
+        <label for="familyStatus">Does your family you are living with have Covid Symptoms or Tested +ve
+
+        </label>
+        <div>
+          <input id="yes" type="radio" value=true name="familyStatus" formControlName="familyStatus">
+          <label for="male">YES</label>
+       </div>
+
+       <div>
+          <input id="no" type="radio" value=false name="familyStatus" formControlName="familyStatus">
+          <label for="no">NO</label>
+       </div>
+
+    </div>
+          
+              
+        <div class="form-group text-center">
+          <button
+            class="btn btn-success"
+            type="submit"
+          >
+            Submit
+          </button>
+        </div>
+    </form>
+    
+    </div>
+</div>
