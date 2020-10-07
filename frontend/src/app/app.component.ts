@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { MessagingService } from './_services/messaging.service';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +8,7 @@ import { MessagingService } from './_services/messaging.service';
 export class AppComponent {
   title = 'ADPCare';
   message;
-  constructor(private messagingService: MessagingService) { }
+  constructor() { }
 ngOnInit() {
   // this.messagingService.requestPermission();
   // this.messagingService.receiveMessage();
