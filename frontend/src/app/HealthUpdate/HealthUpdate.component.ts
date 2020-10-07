@@ -19,7 +19,6 @@ res: boolean;
 
   ngOnInit() {
     this.createSubmissionForm();
-    this.send();
    
   }
   createSubmissionForm() {
@@ -51,14 +50,18 @@ res: boolean;
    }
    );
   }
-  delay(ms: number) {
-    return new Promise( resolve => setTimeout(resolve, ms) );
+
+  send(){
+   
+    if(!this.admin.wfh){
+      alert('Welcome back to office');
+      return;
+    }
+    alert('Work from home for you today');
+    
+
   }
-  async send(){
-     alert('Go Wash your hands at the nearest sanitation Station');
-     await this.delay(100000);
-     this.send();
-   }
+
 
 
 }

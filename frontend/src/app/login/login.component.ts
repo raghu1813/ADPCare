@@ -37,11 +37,20 @@ ngOnInit() {
     this.model.password = this.f.password.value;
     this.authService.login(this.model).subscribe(
       next => {
+        this.admin.getStatus().subscribe((m)=>{
+          this.res = m as boolean;
+          this.admin.wfh = this.res;
+        });
         this.alertify.success('Logged in successfully');
       },
       error => {
         this.alertify.error('Failed to login');
       },()=>{
+        this.admin.getStatus().subscribe((m)=>{
+          this.res = m as boolean;
+          this.admin.wfh = this.res;
+
+        });
         this.router.navigate(['/HealthUpdate']);}
     );
   }

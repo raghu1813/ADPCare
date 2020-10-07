@@ -15,6 +15,7 @@ cc: boolean;
   ngOnInit() {
     this.admin.getStatus().subscribe((m)=>{
       this.res = m as boolean;
+      this.admin.wfh = this.res;
     });
     
   }
@@ -28,5 +29,11 @@ cc: boolean;
   }
   no(){
     this.admin.cafetatiaCount--;
+  }
+  yes1(){
+    this.admin.ConferenceCount++;
+  }
+  no1(){
+    this.admin.ConferenceCount--;
   }
 }

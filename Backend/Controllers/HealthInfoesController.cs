@@ -10,6 +10,7 @@ using Backend.Models;
 using Microsoft.AspNetCore.Authorization;
 using Backend.Dtos;
 using AutoMapper;
+using Backend.Services;
 
 namespace Backend.Controllers
 {
@@ -20,11 +21,15 @@ namespace Backend.Controllers
     {
         private readonly DataContext _context;
         private readonly IMapper _mapper;
+        
 
-        public HealthInfoesController(DataContext context, IMapper mapper)
+         private readonly IMailService _mailService;
+
+        public HealthInfoesController(DataContext context, IMapper mapper, IMailService mailService)
         {
             _context = context;
             _mapper = mapper;
+            _mailService = mailService;
         }
 
         // GET: api/HealthInfoes
@@ -53,7 +58,18 @@ namespace Backend.Controllers
         {
             var q = _context.Users.Include(h => h.HealthInfo).AsQueryable();
             var user = await q.FirstOrDefaultAsync(u => u.Id == id);
-
+            string email= " ";
+            switch (user.Id)
+            {
+                case 1: email = "raghuramk33@gmail.com";
+                        break;
+                case 2: email = "nabin2407patra @gmail.com";
+                        break;
+                case 3: email = "priyanka1012madas@gmail.com";
+                    break;
+                case 4: email = "aithusriharika@gmail.com";
+                    break;
+            }
             var healthInfo = await _context.HealthInfos.FindAsync(user.HealthInfo.Id);
             var s = 0;
             if (healthUpdateDto.FamilyStatus == true)
@@ -71,6 +87,38 @@ namespace Backend.Controllers
 
             _mapper.Map(healthUpdateDto, healthInfo);
             user.RiskScore = s;
+            if (s >  30)
+            {
+                MailRequest mailRequest = new MailRequest();
+                mailRequest.Body = "Stay safe and Work from home today";
+                mailRequest.ToEmail = email;
+                mailRequest.Subject = "Update from ADP";
+                try
+                {
+                    await _mailService.SendEmailAsync(mailRequest);
+                    return Ok();
+                }
+                catch (Exception ex)
+                {
+                    throw;
+                }
+            }
+            else
+            {
+                MailRequest mailRequest = new MailRequest();
+                mailRequest.Body = "You can Come to Office With your own Precautions";
+                mailRequest.ToEmail = email;
+                mailRequest.Subject = "Update from ADP";
+                try
+                {
+                    await _mailService.SendEmailAsync(mailRequest);
+                    return Ok();
+                }
+                catch (Exception ex)
+                {
+                    throw;
+                }
+            }
             await _context.SaveChangesAsync();
 
             return NoContent();

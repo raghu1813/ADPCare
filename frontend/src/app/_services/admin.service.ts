@@ -14,6 +14,7 @@ santationStations = [
   'outside of Manager room'
 ]
 cafetatiaCount = 0;
+ConferenceCount =0;
 wfh: boolean;
 constructor(private http: HttpClient, private auth: AuthService) { }
 

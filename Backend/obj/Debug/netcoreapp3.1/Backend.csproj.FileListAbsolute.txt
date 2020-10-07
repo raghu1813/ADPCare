@@ -165,5 +165,8 @@ C:\Users\Raghuram\source\repos\ADPCare\Backend\bin\Debug\netcoreapp3.1\ru\Micros
 C:\Users\Raghuram\source\repos\ADPCare\Backend\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\Raghuram\source\repos\ADPCare\Backend\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\Raghuram\source\repos\ADPCare\Backend\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Raghuram\source\repos\ADPCare\Backend\bin\Debug\netcoreapp3.1\MailKit.dll
+C:\Users\Raghuram\source\repos\ADPCare\Backend\bin\Debug\netcoreapp3.1\MimeKit.dll
+C:\Users\Raghuram\source\repos\ADPCare\Backend\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll
 C:\Users\Raghuram\source\repos\ADPCare\Backend\obj\Debug\netcoreapp3.1\Backend.csproj.CoreCompileInputs.cache
 C:\Users\Raghuram\source\repos\ADPCare\Backend\obj\Debug\netcoreapp3.1\Backend.MvcApplicationPartsAssemblyInfo.cache

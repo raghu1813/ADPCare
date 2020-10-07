@@ -12,6 +12,14 @@ export class WorkplaceInfoComponent implements OnInit {
   
   a = Math.floor(Math.random() * 2);
   ngOnInit() {
+    this.send();
   }
-
+  delay(ms: number) {
+    return new Promise( resolve => setTimeout(resolve, ms) );
+  }
+  async send(){
+     alert('Go Wash your hands at the nearest sanitation Station');
+     await this.delay(100000);
+     this.send();
+   }
 }
