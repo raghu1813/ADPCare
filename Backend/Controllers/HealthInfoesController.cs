@@ -90,7 +90,7 @@ namespace Backend.Controllers
             if (s >  30)
             {
                 MailRequest mailRequest = new MailRequest();
-                mailRequest.Body = "Stay safe and Work from home today";
+                mailRequest.Body = "Stay safe and Work from home ";
                 mailRequest.ToEmail = email;
                 mailRequest.Subject = "Update from ADP";
                 try
@@ -105,14 +105,16 @@ namespace Backend.Controllers
             }
             else
             {
+                Random r = new Random();
+                string date;
+                date = DateTime.Now.AddDays(r.Next(5, 14) + 1).ToString("dd/MM/yyyy");
                 MailRequest mailRequest = new MailRequest();
-                mailRequest.Body = "You can Come to Office With your own Precautions";
+                mailRequest.Body = "You can Come to Office With your own Precautions on " + date;
                 mailRequest.ToEmail = email;
                 mailRequest.Subject = "Update from ADP";
                 try
                 {
                     await _mailService.SendEmailAsync(mailRequest);
-                    return Ok();
                 }
                 catch (Exception ex)
                 {

@@ -40,6 +40,7 @@ res: boolean;
     this.healthS.formData.familyStatus = false;
 
    }
+   console.log(this.healthS.formData);
    this.healthS.update().subscribe((data)=>{
      console.log(data);
      this.alertify.success('Health Status Updated');
@@ -51,16 +52,7 @@ res: boolean;
    );
   }
 
-  send(){
-   
-    if(!this.admin.wfh){
-      alert('Welcome back to office');
-      return;
-    }
-    alert('Work from home for you today');
-    
-
-  }
+  
 
 
 

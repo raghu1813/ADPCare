@@ -4,6 +4,7 @@ import { LoginComponent } from './login/login.component';
 import { WorkplaceInfoComponent } from './workplaceInfo/workplaceInfo.component';
 import { HealthUpdateComponent } from './HealthUpdate/HealthUpdate.component';
 import { MyActivityComponent } from './my-activity/my-activity.component';
+import { CheckEmployeeComponent } from './CheckEmployee/CheckEmployee.component';
 export const appRoutes: Routes = [
   
     {path: '', component: LoginComponent},
@@ -12,10 +13,11 @@ export const appRoutes: Routes = [
     canActivate: [AuthGuard],
     children: [
 
-        {path:'WorkplaceSafety', component:WorkplaceInfoComponent},
+        {path: 'updatehealth',component:CheckEmployeeComponent},
         {path:'HealthUpdate',component:HealthUpdateComponent},
         {path:'workplaceinfo',component: WorkplaceInfoComponent},
-        {path:'myactivity', component: MyActivityComponent}
+        {path:'myactivity', component: MyActivityComponent},
+      
     ]
    
 },
