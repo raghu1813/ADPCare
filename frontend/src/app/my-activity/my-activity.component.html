@@ -1,15 +1,21 @@
 <div class="card mt-5">
   <div class="body" *ngIf="res"> 
-    You can Work at home 
+    <h2 style="text-align: center;"> You are Working at home</h2>
   </div>
   <div class="container" *ngIf="!res">
-    
-      <label  for="CC" class="mr-2"> Are you at cafetaria </label>
-      <button class="btn btn-primary mr-2" (click)="yes()"  >YES</button>
-      <button class="btn btn-primary" (click)="no()">No</button>
-
-      <label  for="Coc" class="mr-2"> Are you at Conference Hall </label>
-      <button class="btn btn-primary mr-2" (click)="yes1()"  >YES</button>
-      <button class="btn btn-primary" (click)="no1()">No</button>
+    <h2 style="text-align: center;" >Update Your Position Here</h2>
+    <hr/>
+    <table id="customers">
+      <tr>
+        <td class="mr-2"> Are you at the Cafetatia </td>
+        <td><button  class="btn btn-primary mr-2" (click)="yes()">YES</button></td>
+        <td><button  class="btn btn-primary" (click)="no()">NO</button></td>
+      </tr>
+      <tr>
+        <td class="mr-2"> Are you at the Conference Hall </td>
+        <td><button  class="btn btn-primary mr-2" (click)="yes1()">YES</button></td>
+        <td><button  class="btn btn-primary" (click)="no1()">No</button></td>
+      </tr>
+    </table>
   </div>
 </div>

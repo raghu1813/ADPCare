@@ -1,7 +1,4 @@
-.body{
-    text-align: center;
-    /* padding-left: 40px; */
-}
+
 .card {
    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
    transition: 0.3s;
@@ -12,3 +9,35 @@
    justify-content: center;
    margin: 0 auto;
  }
+ .table-hover > tr:hover {
+    background-color: #D2D2D2;
+    cursor: pointer;
+  }
+  table{
+    display: inline-block;
+  }
+  /* .body{
+   padding-left: 400px;
+   padding-top: 50px;
+  } */
+  #customers {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  #customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  
+  #customers tr:hover {background-color: #ddd;}
+  
+  #customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4cafa7;
+    color: white;
+  }

@@ -25,7 +25,7 @@ cc: boolean;
       alert('Already enough members are present. For safety reasons dont visit');
       return;
     }
-   this.admin.cafetatiaCount++;
+    this.admin.cafetatiaCount++;
   }
   no(){
     this.admin.cafetatiaCount--;

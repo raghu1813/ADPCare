@@ -7,7 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ADPCare';
-  message;
   constructor() { }
 ngOnInit() {
   // this.messagingService.requestPermission();

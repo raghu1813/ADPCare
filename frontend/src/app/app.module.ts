@@ -7,25 +7,31 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
 import { LoginComponent } from './login/login.component';
+import {TabsModule} from 'ngx-bootstrap/tabs';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { WorkplaceInfoComponent } from './workplaceInfo/workplaceInfo.component';
 import { HealthUpdateComponent } from './HealthUpdate/HealthUpdate.component';
 import { MyActivityComponent } from './my-activity/my-activity.component';
+import { CheckEmployeeComponent } from './CheckEmployee/CheckEmployee.component';
+import {TransportComponent} from './Transport/Transport.component';
 
 @NgModule({
-  declarations: [					
+  declarations: [						
     AppComponent,
       NavComponent,
       LoginComponent,
       WorkplaceInfoComponent,
       HealthUpdateComponent,
-      MyActivityComponent
+      MyActivityComponent,
+      CheckEmployeeComponent,
+      TransportComponent
    ],
   imports: [
     BrowserModule,
     FormsModule,
+    TabsModule.forRoot(),
     BsDropdownModule.forRoot(),
     BrowserAnimationsModule,
     // AngularFireDatabaseModule,

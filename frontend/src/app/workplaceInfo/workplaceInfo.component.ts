@@ -18,6 +18,7 @@ export class WorkplaceInfoComponent implements OnInit {
     return new Promise( resolve => setTimeout(resolve, ms) );
   }
   async send(){
+    await this.delay(10000);
      alert('Go Wash your hands at the nearest sanitation Station');
      await this.delay(100000);
      this.send();

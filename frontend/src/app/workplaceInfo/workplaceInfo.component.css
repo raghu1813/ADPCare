@@ -1,5 +1,5 @@
 .body{
-    text-align: center;
+    /* text-align: center; */
     /* padding-left: 40px; */
 }
 .card {
@@ -14,4 +14,19 @@
  }
  li{
      font-size: large;
+     float: left;
  }
+ .column {
+   display: flex;
+   padding-left: 200px;
+ 
+  }
+  /* .row {margin: 0 -5px;} */
+
+  .row:after {
+    content: "";
+    clear: both;
+  }  
+p{
+    text-align: center;
+}
